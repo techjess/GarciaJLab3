@@ -41,7 +41,9 @@ For example, my assignment would be named MayElab3.cpp
 ---
 
 Submission
-This project will not be submitted through TITANium, but rather through Github. Make a repository using our organization, https://github.com/CSUF-s18-121-05-15 , and name it similarly to the name you used for your cpp file. If you are unable to due to not being a member of the organization, please return to Titanium and fill out the survey available.
+This project will not be submitted through TITANium, but rather through Github. Make a repository using our organization, 
+https://github.com/CSUF-s18-121-05-15 , and name it similarly to the name you used for your cpp file. If you are unable to due to not 
+being a member of the organization, please return to Titanium and fill out the survey available.
 
 To start, fork the repository.
 *Optional* Clone the repository to your computer. *Optional*
