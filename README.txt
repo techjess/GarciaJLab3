@@ -46,3 +46,40 @@ https://github.com/CSUF-s18-121-05-15 , and name it similarly to the name you us
 being a member of the organization, please return to Titanium and fill out the survey available.
 
 Use this invitation link for submission: https://classroom.github.com/g/yRNJZxG2
+
+
+Functions provided as reference; you do NOT need to use functions in this program, although it is allowed.
+
+//void DrawRectangle(int width, int height);
+//DrawRectangle(5,3)
+*****
+*****
+*****
+
+//void DrawRectangle(string word, int height);
+//DrawRectangle("VOTE", 3)
+shape.txt:
+VOTE
+VOTE
+VOTE
+
+//void DrawTriangle(int size, bool pointingUp);
+//DrawTriangle(4, true)
+*
+**
+***
+****
+
+//void DrawTriangle(string word, bool pointingUp);
+//DrawTriangle("VOTE", false)
+VOTE
+OTE
+TE
+E
+
+//DrawTriangle("VOTE", true)
+E
+TE
+OTE
+VOTE
+
