@@ -15,8 +15,8 @@ Create a program that:
       b)  Triangle
         Ask user to choose between supplying a word or a width, and whether the triangle points up or down
         Read input
-3.  Print the desired shape
-4.  Ask the user whether they want to print to a file, “myshape.txt”, or to cout
+3.  Ask the user whether they want to print to a file, “myshape.txt”, or to cout
+4.  Print the desired shape
 5.  Ask the user if they would like to exit, or return to step 1
 
 Any input requested from the user should only be one character in length per decision.
