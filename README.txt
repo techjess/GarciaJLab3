@@ -1,85 +1,183 @@
-# Lab_3
-Instructions for lab 3
+﻿//Jesse Garcia
+//CPSC 121
+//2/11/18
 
-CPSC 121
-Lab 3
-Fall 2018
-Eric May
-Printing Shapes
-Create a program that:
-1.  Prompt the user to choose between a rectangle and a triangle
-2.  Prompt user for shape parameters
-      a)  Rectangle
-        Ask user to choose between supplying a word or a width
-        Ask user for height
-      b)  Triangle
-        Ask user to choose between supplying a word or a width, and whether the triangle points up or down
-        Read input
-3.  Ask the user whether they want to print to a file, “myshape.txt”, or to cout
-4.  Print the desired shape
-5.  Ask the user if they would like to exit, or return to step 1
+#include<iostream>
+#include<string>
+using namespace std;
 
-Any input requested from the user should only be one character in length per decision.
+void rectangleWidth(int w, int h) {
+	for (int i = 0;i < h;i++) {
+		for (int j = 0;j < w;j++) {
+			cout << "*";
+		}
+		cout << endl;
+	}
+}
 
-Points:
-2 - Documentation, readability, format
-2 - Proper program flow (conditionals, loops, etc)
-1 - File output
-1 - Functions
-2 - Filename and Header
-2 - Output testing
+void rectangleWord(int s, int h, string w) {
 
-Header
-//<Your Name>
-//CPSC 121 Lab 3
-//<MM/DD/YY>
-
-Filename
-<Last Name><First Initial>lab3.cpp
-For example, my assignment would be named MayElab3.cpp
-
----
-
-Submission
-This project will not be submitted through TITANium, but rather through Github. Make sure you're in our organization, 
-https://github.com/CSUF-s18-121-05-15 , and name it similarly to the name you used for your cpp file where applicable. If you are unable to due to not 
-being a member of the organization, please return to Titanium and fill out the survey available.
-
-Use this invitation link for submission: https://classroom.github.com/g/yRNJZxG2
+	for (int i = 0;i < h;i++){ // outer 
+		for (int j = 0;j < s;j++) //inner
+		{
+			cout << w[j]; // value that is output
+		}
+		cout << endl;//new line for next line output
+	}
+}
 
 
-Functions provided as reference; you do NOT need to use functions in this program, although it is allowed.
 
-//void DrawRectangle(int width, int height);
-//DrawRectangle(5,3)
-*****
-*****
-*****
+void triangleWordUp(int s,string w) {
+		for (int i = 0;i < s;i++) // outer  height
+		{
+			for (int j = 0;j <= i;j++) //inner width
+			{
+				cout << w[j]; // value that is output
+			}
+			cout << endl;//new line for next line output
+		}
+	
+}
 
-//void DrawRectangle(string word, int height);
-//DrawRectangle("VOTE", 3)
-shape.txt:
-VOTE
-VOTE
-VOTE
+void triangleWordDown(int s, string w) {
+	for (int i = s;i > 0;i--) // outer  height
+	{
+		for (int j = 0;j < i;j++) //inner width
+		{
+			cout << w[j]; // value that is output
+		}
+		cout << endl;//new line for next line output
+	}
+}
 
-//void DrawTriangle(int size, bool pointingUp);
-//DrawTriangle(4, true)
-*
-**
-***
-****
+void triangleWidthUp(int w) {
+	for (int i = 1;i <= w;i++) // outer  height
+	{
+		for (int j = 1;j <= i;j++) //inner width
+		{
+			cout << "*"; // value that is output
+		}
+		cout << endl;//new line for next line output
+	}
+}
 
-//void DrawTriangle(string word, bool pointingUp);
-//DrawTriangle("VOTE", false)
-VOTE
-OTE
-TE
-E
+void triangleWidthDown(int w) {
+	for (int i = w;i >= 1;i--) // outer  height
+	{
+		for (int j = 1;j <= i;j++) //inner width
+		{
+			cout << "*"; // value that is output
+		}
+		cout << endl;//new line for next line output
+	}
+}
 
-//DrawTriangle("VOTE", true)
-E
-TE
-OTE
-VOTE
+int main()
+{
+
+	char loop = 'y';
+	while (loop == 'y') {
+		char answer = 'z';
+		cout << "Please choose between: a) rectangle or b)triangle\n ";
+		cin >> answer;
+		//Square pattern
+		char squareAnswer = 'x';
+
+		int width = 0;
+		int height = 0;
+		string word = "";
+		//If answer is a square
+		if (answer == 'a') {
+
+			cout << "Would you like to supply: a)word or b)width? \n";
+			cin >> squareAnswer;
+			if (squareAnswer == 'a') {
+				cout << "Please give us your word: ";
+				cin >> word;
+			}
+			else {
+				cout << "Please give us a width: ";
+				cin >> width;
+			}
+			cout << "Please give us a height: ";
+			cin >> height;
+
+
+			//If the user chose a rectangle, word
+
+			if (squareAnswer == 'a') {
+				int size = word.length();
+				rectangleWord(size, height, word);
+			}
+			//Rectangle , width
+			else {
+				rectangleWidth(width, height);
+			}
+
+		}
+		//Triangle
+		else {
+			
+			int triangle;
+			int triWidth;
+			string triWord = "";
+			char triAnswer = 'x';
+			char triDirection = 'z';
+
+			cout << "Would you like to provide: a)word or b)width? ";
+			cin >> triAnswer;
+			cout << "Would you like the trianlgle to point: a)up or b)down? ";
+			cin >> triDirection;
+			
+			//Triangle with user providing word
+			if (triAnswer == 'a') {
+				cout << "Please provide word: ";
+				cin >> triWord;
+				int size = triWord.length();
+				
+				//pointing up, word
+				if (triDirection == 'a') {
+					triangleWordUp(size, triWord);
+				}
+
+				//pointing down, word
+				else {
+					triangleWordDown(size, triWord);
+				}
+
+			}
+
+
+
+
+
+
+			//Triangle with user providing width
+			else {
+				cout << "Please provide width: ";
+				cin >> triWidth;
+				//Pointing UP, width
+				if (triDirection == 'a') {
+					triangleWidthUp(triWidth);
+				}
+				//Pointing Down, width
+				else {
+					triangleWidthDown(triWidth);
+				}
+			}
+		}
+
+
+
+		cout << "Hit 'y' to try again. Otherwise, hit any key to exit: \n";
+		cin >> loop;
+		
+
+	}
+	system("pause");
+	return 0;
+
+}
+
 
